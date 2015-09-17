@@ -20,8 +20,6 @@
 - (IBAction)barButtonBackViewClick:(UIBarButtonItem *)sender;
 - (IBAction)barButtonEditDoneClick:(UIBarButtonItem *)sender;
 
-- (IBAction)buttonAddClick:(UIButton *)sender;
-- (IBAction)backViewController:(UIButton *)sender;
 
 
 @end

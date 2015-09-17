@@ -173,22 +173,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q0T-9K-ejE">
-                                <rect key="frame" x="558" y="26" width="22" height="22"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="buttonAddClick:" destination="muK-rW-meT" eventType="touchUpInside" id="cNS-wG-Z4p"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hG-as-gS2">
-                                <rect key="frame" x="15" y="19" width="49" height="30"/>
-                                <state key="normal" title="&lt; Back"/>
-                                <connections>
-                                    <action selector="backViewController:" destination="muK-rW-meT" eventType="touchUpInside" id="L37-ag-tHB"/>
-                                </connections>
-                            </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mxv-xe-VbH">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <items>
@@ -219,13 +203,9 @@
                             <constraint firstAttribute="trailing" secondItem="Mxv-xe-VbH" secondAttribute="trailing" id="2aK-hE-x1E"/>
                             <constraint firstAttribute="trailing" secondItem="0Vx-qY-WIX" secondAttribute="trailing" id="81Z-lF-4mT"/>
                             <constraint firstItem="0Vx-qY-WIX" firstAttribute="leading" secondItem="Xfb-Si-Dpc" secondAttribute="leading" id="BC1-Om-Jjh"/>
-                            <constraint firstItem="Q0T-9K-ejE" firstAttribute="top" secondItem="7d4-q7-MhY" secondAttribute="bottom" constant="6" id="KJO-3R-axs"/>
                             <constraint firstItem="0Vx-qY-WIX" firstAttribute="top" secondItem="Xfb-Si-Dpc" secondAttribute="top" constant="43" id="KKQ-so-qaR"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Q0T-9K-ejE" secondAttribute="trailing" constant="4" id="XNt-cR-MOa"/>
-                            <constraint firstItem="3hG-as-gS2" firstAttribute="top" secondItem="Xfb-Si-Dpc" secondAttribute="top" constant="19" id="fJe-me-SRD"/>
                             <constraint firstItem="Mxv-xe-VbH" firstAttribute="leading" secondItem="Xfb-Si-Dpc" secondAttribute="leading" id="iP1-ng-tas"/>
                             <constraint firstItem="aEW-i1-ljt" firstAttribute="top" secondItem="0Vx-qY-WIX" secondAttribute="bottom" id="syO-dQ-ed2"/>
-                            <constraint firstItem="3hG-as-gS2" firstAttribute="leading" secondItem="Xfb-Si-Dpc" secondAttribute="leading" constant="15" id="uUL-em-xBP"/>
                             <constraint firstItem="Mxv-xe-VbH" firstAttribute="top" secondItem="Xfb-Si-Dpc" secondAttribute="top" id="wJy-0J-UK9"/>
                         </constraints>
                     </view>
