@@ -14,7 +14,11 @@
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UITextField *textFieldCity;
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *barButtonBackAdd;
+
+- (IBAction)barButtonBackViewClick:(UIBarButtonItem *)sender;
+- (IBAction)barButtonEditDoneClick:(UIBarButtonItem *)sender;
 
 - (IBAction)buttonAddClick:(UIButton *)sender;
 - (IBAction)backViewController:(UIButton *)sender;

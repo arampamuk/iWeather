@@ -18,9 +18,11 @@
     [super viewDidLoad];
 
  
-        [super setEditing:YES animated:YES];
-        [self.tableView setEditing:YES animated:YES];
-        [self.tableView reloadData];
+    
+    UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background"]];
+    [tempImageView setFrame:self.tableView.frame];
+
+    self.tableView.backgroundView = tempImageView;
   
     
     
@@ -38,6 +40,7 @@
     }
     
     cell.textLabel.text = [cities objectAtIndex:indexPath.row];
+    cell.backgroundColor = [UIColor clearColor];
     return cell;
 }
 
@@ -60,10 +63,6 @@
 }
 
 
-- (UITableViewCellEditingStyle) tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return UITableViewCellEditingStyleNone;
-}
-
 - (BOOL) tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
     return YES;
 }
@@ -84,26 +83,59 @@
 
 
 
-- (IBAction)buttonAddClick:(UIButton *)sender {
- 
-    [cities addObject:self.textFieldCity.text];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[cities indexOfObject:self.textFieldCity.text] inSection:0];
-    [self.tableView beginUpdates];
-    [self.tableView
-     insertRowsAtIndexPaths:@[indexPath]withRowAnimation:UITableViewRowAnimationBottom];
-    [self.tableView endUpdates];
+- (IBAction)barButtonBackViewClick:(UIBarButtonItem *)sender {
     
-    self.textFieldCity.text = @"";
-    
-    [self savePlist];
-  
+    if (self.editing == YES) {
+
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Please enter a city." message:@"" delegate:self cancelButtonTitle:@"Add" otherButtonTitles:nil];
+        alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+        
+        UITextField * alertTextField = [alert textFieldAtIndex:0];
+        alertTextField.keyboardType = UIKeyboardTypeNumberPad;
+        alertTextField.placeholder = @"Glasgow";
+        [alert show];
+        
+    } else {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
-- (IBAction)backViewController:(UIButton *)sender {
+- (IBAction)barButtonEditDoneClick:(UIBarButtonItem *)sender {
     
-    [self.navigationController popViewControllerAnimated:YES];
+    if (self.editing == YES) {
+        sender.title = @"Edit";
+        self.barButtonBackAdd.title = @"< Back";
+        
+        [super setEditing:NO animated:YES];
+        [self.tableView setEditing:NO animated:YES];
+        [self.tableView reloadData];
+        
+    } else {
+        sender.title = @"Done";
+        self.barButtonBackAdd.title = @"Add";
+        
+        [super setEditing:YES animated:YES];
+        [self.tableView setEditing:YES animated:YES];
+        [self.tableView reloadData];
+    }
 }
 
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    NSLog(@"Entered: %@",[[alertView textFieldAtIndex:0] text]);
+    NSString *cityName = [[alertView textFieldAtIndex:0] text];
+    
+    if ([[cityName stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]length] != 0) {
+        [cities addObject:cityName];
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[cities indexOfObject:cityName] inSection:0];
+        [self.tableView beginUpdates];
+        [self.tableView
+         insertRowsAtIndexPaths:@[indexPath]withRowAnimation:UITableViewRowAnimationBottom];
+        [self.tableView endUpdates];
+        
+        [self savePlist];
+    }
+}
 
 
 - (void)savePlist {
@@ -125,6 +157,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (BOOL)prefersStatusBarHidden {
+    
+    return YES;
 }
 
 /*
