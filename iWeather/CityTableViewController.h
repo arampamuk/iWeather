@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *barButtonBackAdd;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *barButtonEditDone;
 
 - (IBAction)barButtonBackViewClick:(UIBarButtonItem *)sender;
 - (IBAction)barButtonEditDoneClick:(UIBarButtonItem *)sender;

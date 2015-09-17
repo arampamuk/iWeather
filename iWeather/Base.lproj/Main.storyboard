@@ -211,6 +211,7 @@
                     </view>
                     <connections>
                         <outlet property="barButtonBackAdd" destination="nW6-DX-XRY" id="RQn-X8-q14"/>
+                        <outlet property="barButtonEditDone" destination="GeM-xG-8u8" id="yv0-di-Iwd"/>
                         <outlet property="tableView" destination="0Vx-qY-WIX" id="3Fu-5w-sC6"/>
                         <outlet property="view" destination="Xfb-Si-Dpc" id="CeC-dw-ALw"/>
                     </connections>

@@ -22,8 +22,6 @@
                          success:(void (^)(WeatherResponse *responseObject))success
                          failure:(void (^)(NSError *error))failure;
 
-- (void)getAllCityNames:(NSString *)name
-                success:(void (^)(NSArray *responseObject))success
-                failure:(void (^)(NSError *error))failure;
+
 @end
 

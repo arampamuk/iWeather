@@ -26,12 +26,9 @@
     
     if ([cities count] == 0) {
     
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Please add a city." message:@"" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-        //alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+        [self barButtonEditDoneClick:nil]; //For apear add button
         
-        //UITextField * alertTextField = [alert textFieldAtIndex:0];
-        //alertTextField.keyboardType = UIKeyboardTypeAlphabet;
-        //alertTextField.placeholder = @"Glasgow";
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Please add a city." message:@"" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         [alert show];
     }
 }
@@ -110,7 +107,7 @@
 - (IBAction)barButtonEditDoneClick:(UIBarButtonItem *)sender {
     
     if (self.editing == YES) {
-        sender.title = @"Edit";
+        self.barButtonEditDone.title = @"Edit";
         self.barButtonBackAdd.title = @"< Back";
         
         [super setEditing:NO animated:YES];
@@ -118,7 +115,7 @@
         [self.tableView reloadData];
         
     } else {
-        sender.title = @"Done";
+        self.barButtonEditDone.title = @"Done";
         self.barButtonBackAdd.title = @"Add";
         
         [super setEditing:YES animated:YES];
