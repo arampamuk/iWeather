@@ -17,16 +17,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
- 
-    
     UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background"]];
     [tempImageView setFrame:self.tableView.frame];
-
     self.tableView.backgroundView = tempImageView;
   
     
-    
     [self loadPlist];
+    
+    if ([cities count] == 0) {
+    
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Please add a city." message:@"" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        //alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+        
+        //UITextField * alertTextField = [alert textFieldAtIndex:0];
+        //alertTextField.keyboardType = UIKeyboardTypeAlphabet;
+        //alertTextField.placeholder = @"Glasgow";
+        [alert show];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -87,11 +94,11 @@
     
     if (self.editing == YES) {
 
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Please enter a city." message:@"" delegate:self cancelButtonTitle:@"Add" otherButtonTitles:nil];
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Please add a city." message:@"" delegate:self cancelButtonTitle:@"Add" otherButtonTitles:nil];
         alert.alertViewStyle = UIAlertViewStylePlainTextInput;
         
         UITextField * alertTextField = [alert textFieldAtIndex:0];
-        alertTextField.keyboardType = UIKeyboardTypeNumberPad;
+        alertTextField.keyboardType = UIKeyboardTypeAlphabet;
         alertTextField.placeholder = @"Glasgow";
         [alert show];
         

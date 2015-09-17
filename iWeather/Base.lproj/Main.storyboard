@@ -108,7 +108,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="muK-rW-meT" kind="show" id="PXk-gP-NRc"/>
+                                    <segue destination="muK-rW-meT" kind="show" identifier="Cities" id="PXk-gP-NRc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -217,7 +217,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PCQ-Ob-zUj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-976" y="1497"/>
+            <point key="canvasLocation" x="-488" y="1777"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fKQ-Z4-2jj">
@@ -233,7 +233,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X1W-FJ-WbT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1114" y="723"/>
+            <point key="canvasLocation" x="-1718" y="715"/>
         </scene>
     </scenes>
     <resources>

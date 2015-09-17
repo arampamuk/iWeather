@@ -61,6 +61,9 @@
     
     [self loadFirstRecord];
     if (currentCity == nil) {
+        
+        [self performSegueWithIdentifier: @"Cities" sender: self];
+        
         return;
     }
     
