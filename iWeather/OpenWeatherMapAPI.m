@@ -12,7 +12,6 @@
 
 
 #define API_MAIN_URL @"http://api.openweathermap.org/data/2.5/"
-#define API_CITIES_URL @"http://openweathermap.org/help/city_list.txt"
 
 @interface OpenWeatherMapAPI () 
 

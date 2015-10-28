@@ -71,7 +71,7 @@
     [self.activityIndicator startAnimating];
     [openWeatherMapAPI currentWeatherByCityName:currentCity success:^(WeatherResponse *responseObject) {
         
-        [NSThread sleepForTimeInterval:1.0f];
+        
         self.labelCity.text =  [NSString stringWithFormat:@"%@, %@", responseObject.name, responseObject.sys.country];
         self.labelCurrentTemp.text = [NSString stringWithFormat:@"%.1f℃", [responseObject.main.temp floatValue]];
         
